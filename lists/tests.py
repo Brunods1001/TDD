@@ -11,9 +11,21 @@ class HomePageTest(TestCase):
         self.assertEqual(found.func, home_page)
 
     def test_home_page_returns_correct_html(self):
+        '''
+        This tests constants <-- not good.
+        :return:
+        '''
         request = HttpRequest()  # django sees this when browsers request page
         response = home_page(request)
         html = response.content.decode('utf8')
         self.assertTrue(html.startswith('<html>'))
         self.assertIn('<title>To-Do lists</title>', html)
-        self.assertTrue(html.endswith('</html>'))
+        self.assertTrue(html.strip().endswith('</html>'))
+
+    def test_uses_home_template(self):
+        '''
+        Tests implementation <-- Good.
+        :return:
+        '''
+        response = self.client.get('/')
+        self.assertTemplateUsed(response, 'lists/home.html')

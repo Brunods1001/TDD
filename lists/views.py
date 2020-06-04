@@ -1,21 +1,8 @@
 from django.shortcuts import redirect, render
-from lists.models import Item
+from lists.models import Item, List
 
 def home_page(request):
-    """
-    Home page view
-    :param request:
-    :return:
-    """
-    if request.method == 'POST':
-        new_item_text = request.POST['item_text']
-        Item.objects.create(text=new_item_text)
-
-        return redirect('/lists/the-only-list-in-the-world/')
-
-    context = {
-    }
-    return render(request, 'home.html', context)
+    return render(request, 'home.html')
 
 
 def view_list(request):
@@ -24,3 +11,10 @@ def view_list(request):
         'items': items,
     }
     return render(request, 'lists/list.html', context)
+
+
+def new_list(request):
+    list_ = List.objects.create()
+    Item.objects.create(text=request.POST['item_text'],
+                        list=list_)
+    return redirect('/lists/the-only-list-in-the-world/')

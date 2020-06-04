@@ -4,8 +4,10 @@ from django.test import TestCase
 from .views import home_page
 from lists.models import Item
 
-
 class HomePageTest(TestCase):
+
+    def setUp(self):
+        pass
 
     def test_root_url_resolves_to_home_page_view(self):
         found = resolve('/')  # gets view function mapped to '/'
@@ -84,3 +86,5 @@ class ItemModelTest(TestCase):
                          'The first (ever) list item')
         self.assertEqual(second_saved_item.text,
                          'Item the second')
+
+

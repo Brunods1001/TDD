@@ -69,7 +69,6 @@ class NewVisitorTest(LiveServerTestCase):
         )
         # There is still a text box inviting him to add another item. He enters
         # "Use feathers to make a fly"
-        self.fail('Finish the test!')
 
         # The page updates again, and now shows both items on his list.
 
@@ -99,7 +98,7 @@ class NewVisitorTest(LiveServerTestCase):
 
         # Francis visits the home page, there is no sign of James' list
         self.browser.get(self.live_server_url)
-        page_text = self.browser.find_elements_by_tag_name('body').text
+        page_text = self.browser.find_element_by_tag_name('body').text
         self.assertNotIn('Buy peacock feathers', page_text)
         self.assertNotIn('make a fly', page_text)
 
@@ -108,7 +107,7 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox = self.browser.find_element_by_id('id_new_item')
         inputbox.send_keys('Buy vegetables')
         inputbox.send_keys(Keys.ENTER)
-        self.wait_for_row_in_list_table('1: Buy milk')
+        self.wait_for_row_in_list_table('1: Buy vegetables')
 
         # Francis gets his own unique URL
         francis_list_url = self.browser.current_url

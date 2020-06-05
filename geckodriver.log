@@ -180,3 +180,15 @@ JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: 
 1591383834018	Marionette	INFO	Listening on port 57665
 1591383834078	Marionette	WARN	TLS certificate errors will be ignored for this session
 1591383834259	Marionette	INFO	Stopped listening on port 57665
+1591398916008	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofiles6P1v6"
+1591398918204	Marionette	INFO	Listening on port 61070
+1591398918256	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591398918512	Marionette	INFO	Stopped listening on port 61070
+1591398984067	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofile27XjcR"
+1591398986331	Marionette	INFO	Listening on port 61155
+1591398986611	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591398986788	Marionette	INFO	Stopped listening on port 61155
+1591399394781	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofileBBlm2w"
+1591399396973	Marionette	INFO	Listening on port 61268
+1591399397048	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591399397398	Marionette	INFO	Stopped listening on port 61268

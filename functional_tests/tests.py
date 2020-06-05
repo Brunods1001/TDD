@@ -10,7 +10,8 @@ MAX_WAIT = 10
 class NewVisitorTest(LiveServerTestCase):
 
     def setUp(self):
-        self.browser = webdriver.Safari()
+        #self.browser = webdriver.Safari()
+        self.browser = webdriver.Firefox()
 
     def tearDown(self):
         self.browser.quit()
@@ -32,7 +33,7 @@ class NewVisitorTest(LiveServerTestCase):
                 if time.time() - start_time > MAX_WAIT:
                     raise e
                 time.sleep(0.5)
-
+    '''
     def test_can_start_a_list_and_retrieve_it_later(self):
         # James heard about a new online to-do app. He goes to checkout its
         # homepage.
@@ -121,6 +122,26 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertIn('Buy vegetables', page_text)
 
         # they are satisfied
+    '''
+    def test_layout_and_styling(self):
+        # James goes to the home page
+        self.browser.get(self.live_server_url)
+        self.browser.set_window_size(1024, 768)
 
+        # He notices the input box is nicely centered
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        print('INPUTBOX LOCATION', inputbox.location['x'])
+        print('INPUTBOX WIDTH', inputbox.size['width'])
+        self.assertAlmostEqual(
+            inputbox.location['x'] + inputbox.size['width'] / 2,
+            512, delta=10)
 
-
+        # He starts a new list and sees the input is nicely centered there too
+        inputbox.send_keys('testing')
+        inputbox.send_keys(Keys.ENTER)
+        self.wait_for_row_in_list_table('1: testing')
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        self.assertAlmostEqual(
+            inputbox.location['x'] + inputbox.size['width'] / 2,
+            512, delta=10
+        )

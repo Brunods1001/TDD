@@ -441,3 +441,18 @@ JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: 
 1591554519257	Marionette	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
 1591554520395	Marionette	INFO	Stopped listening on port 50731
+1591554924680	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofile0DpXdP"
+1591554926841	Marionette	INFO	Listening on port 50853
+1591554926925	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+1591554929634	Marionette	INFO	Stopped listening on port 50853
+1591554932003	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofileynfdZi"
+1591554934223	Marionette	INFO	Listening on port 50907
+1591554934259	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+1591554935445	Marionette	INFO	Stopped listening on port 50907
+1591554937814	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofileEM5RpF"
+1591554939951	Marionette	INFO	Listening on port 50961
+1591554939969	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+1591554941102	Marionette	INFO	Stopped listening on port 50961

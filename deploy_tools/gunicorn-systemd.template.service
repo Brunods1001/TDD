@@ -8,9 +8,8 @@ WorkingDirectory=/home/Bruno/sites/DOMAIN
 EnvironmentFile=/home/Bruno/sites/DOMAIN/.env
 
 ExecStart=/home/Bruno/sites/DOMAIN/virtualenv/bin/gunicorn \
---bind unix:/tmp/DOMAIN.socket \
-django_TDD.wsgi:application
+    --bind unix:/tmp/DOMAIN.socket \
+    superlists.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
-

@@ -44,6 +44,38 @@ def deploy():
         _update_database()
 
 '''
+# testing
+cat ./deploy_tools/nginx.template.conf \
+    | sed "s/DOMAIN/testing.new.brunodos3.com/g" \
+    | sudo tee /etc/nginx/sites-available/testing.new.brunodos3.com
+   
+cat ./deploy_tools/gunicorn-systemd.template.service \
+    | sed "s/DOMAIN/testing.new.brunodos3.com/g" \
+    | sudo tee /etc/systemd/system/gunicorn-testing.new.brunodos3.com.service 
+
+sudo systemctl daemon-reload
+sudo systemctl reload nginx
+sudo systemctl enable gunicorn-testing.new.brunodos3.com
+sudo systemctl start gunicorn-testing.new.brunodos3.com
+    
+# staging
+cat ./deploy_tools/nginx.template.conf \
+    | sed "s/DOMAIN/staging.brunodos3.com/g" \
+    | sudo tee /etc/nginx/sites-available/staging.brunodos3.com
+   
+cat ./deploy_tools/gunicorn-systemd.template.service \
+    | sed "s/DOMAIN/staging.brunodos3.com/g" \
+    | sudo tee /etc/systemd/system/gunicorn-staging.brunodos3.com.service 
+
+cd /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/staging.brunodos3.com staging.brunodos3.com
+
+sudo systemctl daemon-reload
+sudo systemctl reload nginx
+sudo systemctl enable gunicorn-staging.brunodos3.com
+sudo systemctl start gunicorn-staging.brunodos3.com
+
+# production    
 cat ./deploy_tools/nginx.template.conf \
     | sed "s/DOMAIN/brunodos3.com/g" \
     | sudo tee /etc/nginx/sites-available/brunodos3.com
@@ -51,6 +83,9 @@ cat ./deploy_tools/nginx.template.conf \
 cat ./deploy_tools/gunicorn-systemd.template.service \
     | sed "s/DOMAIN/brunodos3.com/g" \
     | sudo tee /etc/systemd/system/gunicorn-brunodos3.com.service 
+
+cd /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/brunodos3.com brunodos3.com
 
 sudo systemctl daemon-reload
 sudo systemctl reload nginx

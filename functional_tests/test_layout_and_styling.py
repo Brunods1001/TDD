@@ -1,97 +1,29 @@
-from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import time
 
 from .base import FunctionalTest
 
 
-class NewVisitorTest(FunctionalTest):
+class LayoutAndStylingTest(FunctionalTest):
 
-    def test_can_start_a_list_and_retrieve_it_later(self):
-        # James heard about a new online to-do app. He goes to checkout its
-        # homepage.
+    def test_layout_and_styling(self):
+        # James goes to the home page
         self.browser.get(self.live_server_url)
+        self.browser.set_window_size(1024, 768)
 
-        # He notices the page title and header mention to-do lists.
-        self.assertIn('To-Do', self.browser.title)
-        header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('To-Do', header_text)
-
-        # He is invited to enter a To-Do item right away.
+        # He notices the input box is nicely centered
         inputbox = self.browser.find_element_by_id('id_new_item')
-        self.assertEqual(
-            inputbox.get_attribute('placeholder'),
-            'Enter a to-do item'
+        print('INPUTBOX LOCATION', inputbox.location['x'])
+        print('INPUTBOX WIDTH', inputbox.size['width'])
+        self.assertAlmostEqual(
+            inputbox.location['x'] + inputbox.size['width'] / 2,
+            512, delta=10)
+
+        # He starts a new list and sees the input is nicely centered there too
+        inputbox.send_keys('testing')
+        inputbox.send_keys(Keys.ENTER)
+        self.wait_for_row_in_list_table('1: testing')
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        self.assertAlmostEqual(
+            inputbox.location['x'] + inputbox.size['width'] / 2,
+            512, delta=10
         )
-
-        # He types "Buy feathers" into a text box.
-        inputbox.send_keys('Buy peacock feathers')
-
-        # When he hits enter, the page updates, and now the page lists
-        # "1: Buy feathers" as an item in a to-do list.
-        inputbox.send_keys(Keys.ENTER)
-        time.sleep(1)
-
-        inputbox = self.browser.find_element_by_id('id_new_item')
-        inputbox.send_keys('Use peacock feathers to make a fly')
-        inputbox.send_keys(Keys.ENTER)
-        time.sleep(1)
-
-        self.wait_for_row_in_list_table('1: Buy peacock feathers')
-        self.wait_for_row_in_list_table(
-            '2: Use peacock feathers to make a fly'
-        )
-        # There is still a text box inviting him to add another item. He enters
-        # "Use feathers to make a fly"
-
-        # The page updates again, and now shows both items on his list.
-
-        # He wonders whether the site will remember his list. Then he sees that the
-        # site has generated a unique URL - his to-do list is still there.
-
-        # Satisfied, he goes to sleep.
-
-    def test_multiple_users_can_start_lists_at_different_urls(self):
-        # James starts a new to-do list
-        self.browser.get(self.live_server_url)
-        inputbox = self.browser.find_element_by_id('id_new_item')
-        inputbox.send_keys('Buy peacock feathers')
-        inputbox.send_keys(Keys.ENTER)
-        self.wait_for_row_in_list_table('1: Buy peacock feathers')
-
-        # he notices that his list has a unique URL
-        james_list_url = self.browser.current_url
-        self.assertRegex(james_list_url, '/lists/.+')
-
-        # Now a new user, Francis, comes along to the site.
-
-        ## We use a new browser session to make sure no information of
-        ## James' is coming through from cookies etc
-        self.browser.quit()
-        self.browser = webdriver.Safari()
-
-        # Francis visits the home page, there is no sign of James' list
-        self.browser.get(self.live_server_url)
-        page_text = self.browser.find_element_by_tag_name('body').text
-        self.assertNotIn('Buy peacock feathers', page_text)
-        self.assertNotIn('make a fly', page_text)
-
-        # Francis starts a new list by entering a new item. He is less
-        # interesting than James...
-        inputbox = self.browser.find_element_by_id('id_new_item')
-        inputbox.send_keys('Buy vegetables')
-        inputbox.send_keys(Keys.ENTER)
-        self.wait_for_row_in_list_table('1: Buy vegetables')
-
-        # Francis gets his own unique URL
-        francis_list_url = self.browser.current_url
-        self.assertRegex(francis_list_url, '/lists/.+')
-        self.assertNotEqual(francis_list_url, james_list_url)
-
-
-        # there is no trace of James' list
-        page_text = self.browser.find_element_by_tag_name('body').text
-        self.assertNotIn('Buy peacock feathers', page_text)
-        self.assertIn('Buy vegetables', page_text)
-
-        # they are satisfied

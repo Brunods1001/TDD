@@ -4,10 +4,10 @@ Description=Gunicorn server for DOMAIN
 [Service]
 Restart=on-failure
 User=Bruno
-WorkingDirectory=/home/Bruno/sites/www.DOMAIN
-EnvironmentFile=/home/Bruno/sites/www.DOMAIN/.env
+WorkingDirectory=/home/Bruno/sites/DOMAIN
+EnvironmentFile=/home/Bruno/sites/DOMAIN/.env
 
-ExecStart=/home/Bruno/sites/www.DOMAIN/virtualenv/bin/gunicorn \
+ExecStart=/home/Bruno/sites/DOMAIN/virtualenv/bin/gunicorn \
 --bind unix:/tmp/DOMAIN.socket \
 django_TDD.wsgi:application
 

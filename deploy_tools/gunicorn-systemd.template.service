@@ -9,7 +9,7 @@ EnvironmentFile=/home/Bruno/sites/DOMAIN/.env
 
 ExecStart=/home/Bruno/sites/DOMAIN/virtualenv/bin/gunicorn \
     --bind unix:/tmp/DOMAIN.socket \
-    superlists.wsgi:application
+    django_TDD.wsgi:application
 
 [Install]
 WantedBy=multi-user.target

@@ -43,3 +43,18 @@ def deploy():
         _update_static_files()
         _update_database()
 
+'''
+cat ./deploy_tools/nginx.template.conf \
+    | sed "s/DOMAIN/brunodos3.com/g" \
+    | sudo tee /etc/nginx/sites-available/brunodos3.com
+   
+cat ./deploy_tools/gunicorn-systemd.template.service \
+    | sed "s/DOMAIN/brunodos3.com/g" \
+    | sudo tee /etc/systemd/system/gunicorn-brunodos3.com.service 
+
+sudo systemctl daemon-reload
+sudo systemctl reload nginx
+sudo systemctl enable gunicorn-brunodos3.com
+sudo systemctl start gunicorn-brunodos3.com
+
+'''

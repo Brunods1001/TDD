@@ -38,3 +38,8 @@ class ListAndItemModelTest(TestCase):
         with self.assertRaises(ValidationError):
             item.full_clean()  # test to warn if we forget to set blank=True
             item.save()
+
+    def test_get_absolute_url(self):
+        list_ = List.objects.create()
+        self.assertEqual(list_.get_absolute_url(),
+                         f'/lists/{list_.id}/')

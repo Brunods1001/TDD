@@ -940,3 +940,55 @@ JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: 
 1591742565463	Marionette	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
 1591742576548	Marionette	INFO	Stopped listening on port 56785
+1591744291567	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofilencFntZ"
+1591744294305	Marionette	INFO	Listening on port 56857
+1591744294333	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+1591744295302	Marionette	INFO	Stopped listening on port 56857
+1591744297038	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofileegplHG"
+1591744299327	Marionette	INFO	Listening on port 56896
+1591744299389	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+1591744310402	Marionette	INFO	Stopped listening on port 56896
+1591744311919	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofileYfvFDH"
+1591744314468	Marionette	INFO	Listening on port 56930
+1591744314479	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+1591744316092	Marionette	INFO	Stopped listening on port 56930
+1591744317676	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofileVC7khO"
+1591744319925	Marionette	INFO	Listening on port 56967
+1591744320021	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+1591744322463	Marionette	INFO	Stopped listening on port 56967
+1591744324023	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofile2MNFv0"
+1591744326299	Marionette	INFO	Listening on port 57001
+1591744326383	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+1591744327266	Marionette	INFO	Stopped listening on port 57001
+1591745489985	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofileFSP7M7"
+1591745492553	Marionette	INFO	Listening on port 57147
+1591745492716	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+1591745493696	Marionette	INFO	Stopped listening on port 57147
+1591745495409	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofile3w9SUr"
+1591745497679	Marionette	INFO	Listening on port 57185
+1591745497758	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+1591745508821	Marionette	INFO	Stopped listening on port 57185
+1591745510270	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofilejUE7aV"
+1591745512593	Marionette	INFO	Listening on port 57220
+1591745512617	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+1591745514200	Marionette	INFO	Stopped listening on port 57220
+1591745515795	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofileHrl19l"
+1591745518060	Marionette	INFO	Listening on port 57255
+1591745518153	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+1591745520613	Marionette	INFO	Stopped listening on port 57255
+1591745522174	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/3q/8mphg76x6s53xbhn1r_rkn240000gn/T/rust_mozprofiley5zRWk"
+1591745524441	Marionette	INFO	Listening on port 57289
+1591745524523	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: Invalid autocomplete selectedIndex
+1591745525415	Marionette	INFO	Stopped listening on port 57289
